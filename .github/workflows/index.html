@@ -1,0 +1,1055 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang SC'}
+    span.s1 {font: 12.0px 'PingFang SC'}
+    span.s2 {font: 12.0px 'Apple Symbols'}
+    span.s3 {font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;<span class="s1">量子光学器件交互演示</span> - <span class="s1">马赫</span>-<span class="s1">曾德尔干涉仪</span>&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #e0e0ff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(100, 150, 255, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #8a2be2, #00bfff);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a0a0ff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.main-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.demo-area {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 300px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(20, 20, 50, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(100, 150, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.control-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 300px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(20, 20, 50, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(100, 150, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.canvas-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(10, 10, 30, 0.9);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #4a4aff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#quantumCanvas {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.panel-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #7fffd4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(100, 150, 255, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.control-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.control-label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #b0b0ff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slider-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slider-value {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>input[type="range"] {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-appearance: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #1a1a5e, #4a4aff);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>input[type="range"]::-webkit-slider-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-appearance: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #00ffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 10px #00ffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.control-description {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a0a0cc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.button-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #2a2a8a, #4a4aff);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0, 0, 100, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 20px rgba(0, 100, 255, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #3a3a9a, #5a5aff);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(0);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mode-selector {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(30, 30, 70, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mode-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mode-btn.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(100, 150, 255, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 15px rgba(100, 150, 255, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.results-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(20, 20, 50, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(100, 150, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.results-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(30, 30, 70, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid #00ffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-value {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #b0b0ff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.quantum-state {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Courier New', monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0, 0, 0, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #4a4aff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ffaa;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid rgba(100, 150, 255, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a0a0cc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.main-content {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.canvas-container {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;<span class="s1">量子光学器件交互演示</span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="subtitle"&gt;<span class="s1">马赫</span>-<span class="s1">曾德尔干涉仪</span> (Mach-Zehnder Interferometer) - <span class="s1">演示量子叠加、干涉和测量</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="main-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="demo-area"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="panel-title"&gt;<span class="s1">量子光学实验演示</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mode-selector"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="mode-btn active" id="singlePhotonMode"&gt;<span class="s1">单光子模式</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="mode-btn" id="coherentLightMode"&gt;<span class="s1">相干光模式</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="mode-btn" id="entangledPhotonMode"&gt;<span class="s1">纠缠光子模式</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="canvas-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;canvas id="quantumCanvas"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="control-panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="panel-title"&gt;<span class="s1">实验参数控制</span>&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="control-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="control-label"&gt;<span class="s1">相位差</span> (Δφ): &lt;span id="phaseValue" class="slider-value"&gt;0.00π&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="slider-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="range" id="phaseSlider" min="0" max="200" value="0" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="control-description"&gt;<span class="s1">调整干涉仪两臂之间的相位差，观察干涉图样的变化</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="control-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="control-label"&gt;<span class="s1">分束器反射率</span> (R): &lt;span id="reflectivityValue" class="slider-value"&gt;0.50&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="slider-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="range" id="reflectivitySlider" min="0" max="100" value="50" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="control-description"&gt;<span class="s1">调整分束器的反射率，控制光子的路径选择概率</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="control-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="control-label"&gt;<span class="s1">光子发射速率</span>: &lt;span id="rateValue" class="slider-value"&gt;<span class="s1">中速</span>&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="slider-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="range" id="rateSlider" min="1" max="3" value="2" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="control-description"&gt;<span class="s1">调整光子发射速率，观察干涉图样的形成过程</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="button-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="startBtn"&gt;<span class="s1">启动实验</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="resetBtn"&gt;<span class="s1">重置实验</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="singlePhotonBtn"&gt;<span class="s1">发射单光子</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="control-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="control-label"&gt;<span class="s1">量子态表示</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="quantum-state" id="quantumState"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>|ψ<span class="s2">⟩</span> = 1/√2 (|<span class="s1">路径</span>1<span class="s2">⟩</span> + e^{iΔφ}|<span class="s1">路径</span>2<span class="s2">⟩</span>)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="results-panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="panel-title"&gt;<span class="s1">实验结果分析</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="results-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label"&gt;<span class="s1">探测器</span> D1 <span class="s1">计数</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-value" id="detector1Count"&gt;0&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label" id="detector1Prob"&gt;<span class="s1">概率</span>: 0%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label"&gt;<span class="s1">探测器</span> D2 <span class="s1">计数</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-value" id="detector2Count"&gt;0&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label" id="detector2Prob"&gt;<span class="s1">概率</span>: 0%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label"&gt;<span class="s1">干涉可见度</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-value" id="visibilityValue"&gt;0.00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label"&gt;V = (I_max - I_min)/(I_max + I_min)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label"&gt;<span class="s1">符合计数</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-value" id="coincidenceCount"&gt;0&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="result-label"&gt;<span class="s1">纠缠光子验证</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="control-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="control-label"&gt;<span class="s1">实验说明</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="control-description"&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span></span>马赫<span class="s3">-</span>曾德尔干涉仪是量子光学的基本器件，用于演示量子叠加原理和波粒二象性。</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span></span>单光子通过第一个分束器后处于两个路径的叠加态，在第二个分束器处发生干涉。</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span></span>调整相位差可以观察到探测器计数随相位变化的干涉图样，这是量子力学基本原理的直接体现。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">            </span>&lt;p&gt;</span>量子光学交互演示系统<span class="s3"> | </span>展示量子叠加、干涉和测量<span class="s3"> | </span>仅供教学演示使用<span class="s3">&lt;/p&gt;</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">            </span>&lt;p&gt;</span>提示：尝试调整参数观察量子干涉现象，点击<span class="s3">"</span>发射单光子<span class="s3">"</span>观察单个光子的行为<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">获取</span>Canvas<span class="s1">和上下文</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const canvas = document.getElementById('quantumCanvas');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ctx = canvas.getContext('2d');</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">设置</span>Canvas<span class="s1">尺寸</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function resizeCanvas() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = canvas.parentElement;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>canvas.width = container.clientWidth;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>canvas.height = container.clientHeight;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">初始调整</span>Canvas<span class="s1">大小</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>resizeCanvas();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('resize', resizeCanvas);</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">实验状态变量</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let experimentRunning = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let animationId = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentMode = 'singlePhoton'; // 'singlePhoton', 'coherentLight', 'entangledPhoton'</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">实验参数</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let phaseDifference = 0; // <span class="s1">相位差</span> (0-2π)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let reflectivity = 0.5;<span class="Apple-converted-space">  </span>// <span class="s1">反射率</span> (0-1)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let photonRate = 2;<span class="Apple-converted-space">      </span>// <span class="s1">光子发射速率</span> (1-3)</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">探测器计数</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let detector1Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let detector2Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let coincidenceCount = 0;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">光子数组</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let photons = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let lastPhotonTime = 0;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">干涉仪组件位置</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let interferometerComponents = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>laser: {x: 0.1, y: 0.5},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>beamSplitter1: {x: 0.3, y: 0.5},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mirror1: {x: 0.5, y: 0.3},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mirror2: {x: 0.5, y: 0.7},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>beamSplitter2: {x: 0.7, y: 0.5},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>detector1: {x: 0.9, y: 0.3},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>detector2: {x: 0.9, y: 0.7}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">将相对坐标转换为</span>Canvas<span class="s1">坐标</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toCanvasCoords(relX, relY) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>x: relX * canvas.width,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>y: relY * canvas.height</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">绘制干涉仪</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function drawInterferometer() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">清空</span>Canvas</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.clearRect(0, 0, canvas.width, canvas.height);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制激光源</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const laserPos = toCanvasCoords(interferometerComponents.laser.x, interferometerComponents.laser.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = '#ff3333';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.arc(laserPos.x, laserPos.y, 15, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = '#ff6666';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.arc(laserPos.x, laserPos.y, 10, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fill();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制激光光束</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = experimentRunning ? 'rgba(255, 50, 50, 0.7)' : 'rgba(255, 50, 50, 0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(laserPos.x + 15, laserPos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const bs1Pos = toCanvasCoords(interferometerComponents.beamSplitter1.x, interferometerComponents.beamSplitter1.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(bs1Pos.x, bs1Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制分束器</span>1</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = 'rgba(100, 200, 255, 0.7)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillRect(bs1Pos.x - 20, bs1Pos.y - 40, 40, 80);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#00ffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeRect(bs1Pos.x - 20, bs1Pos.y - 40, 40, 80);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制分束器上的对角线</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(bs1Pos.x - 15, bs1Pos.y - 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(bs1Pos.x + 15, bs1Pos.y + 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制路径</span>1 (<span class="s1">上路径</span>)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const mirror1Pos = toCanvasCoords(interferometerComponents.mirror1.x, interferometerComponents.mirror1.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = experimentRunning ? 'rgba(100, 255, 100, 0.7)' : 'rgba(100, 255, 100, 0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(bs1Pos.x, bs1Pos.y - 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(mirror1Pos.x - 30, mirror1Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(mirror1Pos.x, mirror1Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制路径</span>2 (<span class="s1">下路径</span>)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const mirror2Pos = toCanvasCoords(interferometerComponents.mirror2.x, interferometerComponents.mirror2.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = experimentRunning ? 'rgba(255, 255, 100, 0.7)' : 'rgba(255, 255, 100, 0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(bs1Pos.x, bs1Pos.y + 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(mirror2Pos.x - 30, mirror2Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(mirror2Pos.x, mirror2Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制反射镜</span>1</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = 'rgba(200, 200, 200, 0.8)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillRect(mirror1Pos.x - 5, mirror1Pos.y - 30, 10, 60);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeRect(mirror1Pos.x - 5, mirror1Pos.y - 30, 10, 60);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制反射镜</span>2</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = 'rgba(200, 200, 200, 0.8)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillRect(mirror2Pos.x - 5, mirror2Pos.y - 30, 10, 60);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeRect(mirror2Pos.x - 5, mirror2Pos.y - 30, 10, 60);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制从反射镜到分束器</span>2<span class="s1">的路径</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const bs2Pos = toCanvasCoords(interferometerComponents.beamSplitter2.x, interferometerComponents.beamSplitter2.y);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">上路径继续</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = experimentRunning ? 'rgba(100, 255, 100, 0.7)' : 'rgba(100, 255, 100, 0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(mirror1Pos.x, mirror1Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(bs2Pos.x - 40, bs2Pos.y - 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(bs2Pos.x, bs2Pos.y - 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">下路径继续</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = experimentRunning ? 'rgba(255, 255, 100, 0.7)' : 'rgba(255, 255, 100, 0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(mirror2Pos.x, mirror2Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(bs2Pos.x - 40, bs2Pos.y + 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(bs2Pos.x, bs2Pos.y + 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制分束器</span>2</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = 'rgba(100, 200, 255, 0.7)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillRect(bs2Pos.x - 20, bs2Pos.y - 40, 40, 80);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#00ffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeRect(bs2Pos.x - 20, bs2Pos.y - 40, 40, 80);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制分束器</span>2<span class="s1">上的对角线</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(bs2Pos.x - 15, bs2Pos.y - 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(bs2Pos.x + 15, bs2Pos.y + 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制到探测器的路径</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const detector1Pos = toCanvasCoords(interferometerComponents.detector1.x, interferometerComponents.detector1.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const detector2Pos = toCanvasCoords(interferometerComponents.detector2.x, interferometerComponents.detector2.y);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">到探测器</span>1<span class="s1">的路径</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = experimentRunning ? 'rgba(255, 150, 50, 0.7)' : 'rgba(255, 150, 50, 0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(bs2Pos.x, bs2Pos.y - 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(detector1Pos.x, detector1Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">到探测器</span>2<span class="s1">的路径</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = experimentRunning ? 'rgba(150, 100, 255, 0.7)' : 'rgba(150, 100, 255, 0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.moveTo(bs2Pos.x, bs2Pos.y + 35);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineTo(detector2Pos.x, detector2Pos.y);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制探测器</span>1</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = detector1Count &gt; 0 ? 'rgba(255, 150, 50, 0.9)' : 'rgba(100, 100, 100, 0.7)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.arc(detector1Pos.x, detector1Pos.y, 20, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.font = 'bold 14px Arial';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.textAlign = 'center';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.textBaseline = 'middle';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillText('D1', detector1Pos.x, detector1Pos.y);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制探测器</span>2</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = detector2Count &gt; 0 ? 'rgba(150, 100, 255, 0.9)' : 'rgba(100, 100, 100, 0.7)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.arc(detector2Pos.x, detector2Pos.y, 20, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.font = 'bold 14px Arial';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.textAlign = 'center';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.textBaseline = 'middle';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillText('D2', detector2Pos.x, detector2Pos.y);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制相位指示器</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = 'rgba(100, 200, 255, 0.5)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillRect(canvas.width * 0.45, canvas.height * 0.45, 100, 40);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#00ffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeRect(canvas.width * 0.45, canvas.height * 0.45, 100, 40);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.font = '14px Arial';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.textAlign = 'center';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillText(`Δφ = ${(phaseDifference / Math.PI).toFixed(2)}π`, canvas.width * 0.5, canvas.height * 0.47 + 15);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制分束器反射率指示器</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = 'rgba(100, 200, 255, 0.5)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillRect(canvas.width * 0.3, canvas.height * 0.1, 80, 30);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = '#00ffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.strokeRect(canvas.width * 0.3, canvas.height * 0.1, 80, 30);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = '#ffffff';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.font = '12px Arial';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.textAlign = 'center';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillText(`R = ${reflectivity.toFixed(2)}`, canvas.width * 0.3 + 40, canvas.height * 0.1 + 18);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">光子类</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>class Photon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>constructor(path, entangled = false) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.path = path; // 'upper' <span class="s1">或</span> 'lower'</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.entangled = entangled;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.position = {x: 0.1, y: 0.5};</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.speed = 0.005;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.phase = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.state = 'laser'; // 'laser', 'path1', 'path2', 'detected'</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.detectedAt = null;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.arrivalTime = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.color = this.getColor();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.partner = null; // <span class="s1">纠缠伙伴</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>getColor() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (this.entangled) return '#ff00ff';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (this.path === 'upper') return '#00ff00';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return '#ffff00';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>update(deltaTime) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (this.state === 'detected') return;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">更新相位</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.phase += deltaTime * 10;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">根据状态更新位置</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>switch(this.state) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'laser':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.x += this.speed;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.position.x &gt;= 0.3) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.state = 'atBeamSplitter1';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>// <span class="s1">随机选择路径</span> (<span class="s1">基于反射率</span>)</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.path = Math.random() &lt; reflectivity ? 'upper' : 'lower';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'atBeamSplitter1':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.path === 'upper') {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.x += this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.y -= this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (this.position.y &lt;= 0.3) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>this.state = 'path1';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.x += this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.y += this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (this.position.y &gt;= 0.7) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>this.state = 'path2';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'path1':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.x += this.speed;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.position.x &gt;= 0.5) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.state = 'atMirror1';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'path2':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.x += this.speed;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.position.x &gt;= 0.5) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.state = 'atMirror2';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'atMirror1':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.x += this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.y += this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.position.y &gt;= 0.5) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.state = 'toBeamSplitter2_upper';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'atMirror2':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.x += this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.y -= this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.position.y &lt;= 0.5) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.state = 'toBeamSplitter2_lower';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'toBeamSplitter2_upper':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.x += this.speed;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.position.x &gt;= 0.7) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.state = 'atBeamSplitter2';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'toBeamSplitter2_lower':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.position.x += this.speed;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.position.x &gt;= 0.7) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.state = 'atBeamSplitter2';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'atBeamSplitter2':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// <span class="s1">计算干涉概率</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const amplitudeUpper = Math.sqrt(1 - reflectivity); // <span class="s1">上路径振幅</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const amplitudeLower = Math.sqrt(reflectivity) * Math.cos(phaseDifference); // <span class="s1">下路径振幅（考虑相位）</span></p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// <span class="s1">概率幅度平方</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const probDetector1 = Math.pow(amplitudeUpper + amplitudeLower, 2) / 2;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const probDetector2 = Math.pow(amplitudeUpper - amplitudeLower, 2) / 2;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// <span class="s1">归一化</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const totalProb = probDetector1 + probDetector2;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const normProbDetector1 = probDetector1 / totalProb;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// <span class="s1">随机选择探测器</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const goesToDetector1 = Math.random() &lt; normProbDetector1;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (goesToDetector1) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.detectedAt = 'D1';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>detector1Count++;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.detectedAt = 'D2';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>detector2Count++;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// <span class="s1">如果是纠缠光子且伙伴已检测到，更新符合计数</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.entangled &amp;&amp; this.partner &amp;&amp; this.partner.detectedAt) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (this.detectedAt !== this.partner.detectedAt) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>coincidenceCount++;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.state = 'toDetector';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.arrivalTime = Date.now();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'toDetector':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (this.detectedAt === 'D1') {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.x += this.speed;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.y -= this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (this.position.x &gt;= 0.9) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>this.state = 'detected';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.x += this.speed;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>this.position.y += this.speed * 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (this.position.x &gt;= 0.9) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>this.state = 'detected';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>draw() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const pos = toCanvasCoords(this.position.x, this.position.y);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">绘制光子</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.fillStyle = this.color;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.arc(pos.x, pos.y, 6, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.fill();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">绘制光晕</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.strokeStyle = this.color;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.arc(pos.x, pos.y, 10, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.stroke();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">如果处于叠加态，绘制波动效果</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (this.state === 'path1' || this.state === 'path2') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.strokeStyle = `${this.color}80`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.lineWidth = 1;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const waveRadius = 15 + Math.sin(this.phase) * 5;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.arc(pos.x, pos.y, waveRadius, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.stroke();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">如果已被检测到，绘制检测效果</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (this.state === 'detected' &amp;&amp; Date.now() - this.arrivalTime &lt; 500) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.strokeStyle = `${this.color}`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.lineWidth = 3;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const pulseRadius = 20 + (Date.now() - this.arrivalTime) / 10;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.arc(pos.x, pos.y, pulseRadius, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ctx.stroke();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">发射单光子</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function emitSinglePhoton() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const photon = new Photon('upper');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>photons.push(photon);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateResults();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">发射纠缠光子对</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function emitEntangledPhotons() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const photon1 = new Photon('upper', true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const photon2 = new Photon('lower', true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>photon1.partner = photon2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>photon2.partner = photon1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>photons.push(photon1, photon2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateResults();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">更新光子</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updatePhotons(deltaTime) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = photons.length - 1; i &gt;= 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>photons[i].update(deltaTime);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">移除已检测到一段时间的光子</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (photons[i].state === 'detected' &amp;&amp; Date.now() - photons[i].arrivalTime &gt; 1000) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>photons.splice(i, 1);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">绘制所有光子</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function drawPhotons() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>photons.forEach(photon =&gt; photon.draw());</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">更新结果显示</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateResults() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">更新探测器计数</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('detector1Count').textContent = detector1Count;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('detector2Count').textContent = detector2Count;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('coincidenceCount').textContent = coincidenceCount;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">计算概率</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const totalDetections = detector1Count + detector2Count;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const prob1 = totalDetections &gt; 0 ? (detector1Count / totalDetections * 100).toFixed(1) : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const prob2 = totalDetections &gt; 0 ? (detector2Count / totalDetections * 100).toFixed(1) : 0;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('detector1Prob').textContent = `<span class="s1">概率</span>: ${prob1}%`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('detector2Prob').textContent = `<span class="s1">概率</span>: ${prob2}%`;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">计算干涉可见度</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const maxCount = Math.max(detector1Count, detector2Count);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const minCount = Math.min(detector1Count, detector2Count);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const visibility = totalDetections &gt; 0 ? ((maxCount - minCount) / (maxCount + minCount)).toFixed(2) : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('visibilityValue').textContent = visibility;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">更新量子态表示</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const phaseInPi = (phaseDifference / Math.PI).toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let quantumStateText = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (currentMode === 'singlePhoton') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quantumStateText = `|ψ<span class="s2">⟩</span> = √${(1-reflectivity).toFixed(2)}|<span class="s1">上路径</span><span class="s2">⟩</span> + e^{i${phaseInPi}π}√${reflectivity.toFixed(2)}|<span class="s1">下路径</span><span class="s2">⟩</span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (currentMode === 'coherentLight') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quantumStateText = `<span class="s1">相干光强度</span>: I = I₀[1 + V cos(Δφ)]<span class="s1">，可见度</span> V = ${visibility}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quantumStateText = `<span class="s1">纠缠态</span>: |Ψ⁺<span class="s2">⟩</span> = 1/√2 (|<span class="s1">上路径</span>₁, <span class="s1">下路径</span>₂<span class="s2">⟩</span> + |<span class="s1">下路径</span>₁, <span class="s1">上路径</span>₂<span class="s2">⟩</span>)`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('quantumState').textContent = quantumStateText;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">动画循环</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function animate(timestamp) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!lastPhotonTime) lastPhotonTime = timestamp;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const deltaTime = timestamp - lastPhotonTime;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lastPhotonTime = timestamp;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">如果实验正在运行，自动发射光子</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (experimentRunning &amp;&amp; currentMode !== 'entangledPhoton') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const rate = photonRate === 1 ? 1000 : photonRate === 2 ? 500 : 200;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (timestamp % rate &lt; deltaTime) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>emitSinglePhoton();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (experimentRunning &amp;&amp; currentMode === 'entangledPhoton') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const rate = photonRate === 1 ? 2000 : photonRate === 2 ? 1000 : 500;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (timestamp % rate &lt; deltaTime) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>emitEntangledPhotons();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">更新光子位置</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>updatePhotons(deltaTime / 1000);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">绘制场景</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>drawInterferometer();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>drawPhotons();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">继续动画循环</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>animationId = requestAnimationFrame(animate);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">初始化事件监听</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initEventListeners() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">相位滑块</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const phaseSlider = document.getElementById('phaseSlider');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>phaseSlider.addEventListener('input', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>phaseDifference = (this.value / 100) * Math.PI * 2;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('phaseValue').textContent = (phaseDifference / Math.PI).toFixed(2) + 'π';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateResults();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">反射率滑块</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const reflectivitySlider = document.getElementById('reflectivitySlider');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>reflectivitySlider.addEventListener('input', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reflectivity = this.value / 100;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('reflectivityValue').textContent = reflectivity.toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateResults();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">速率滑块</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const rateSlider = document.getElementById('rateSlider');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>rateSlider.addEventListener('input', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>photonRate = parseInt(this.value);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const rateText = photonRate === 1 ? '<span class="s1">慢速</span>' : photonRate === 2 ? '<span class="s1">中速</span>' : '<span class="s1">快速</span>';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('rateValue').textContent = rateText;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">模式切换按钮</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('singlePhotonMode').addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setMode('singlePhoton');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('coherentLightMode').addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setMode('coherentLight');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('entangledPhotonMode').addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setMode('entangledPhoton');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">控制按钮</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('startBtn').addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>experimentRunning = !experimentRunning;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.textContent = experimentRunning ? '<span class="s1">暂停实验</span>' : '<span class="s1">启动实验</span>';</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (experimentRunning &amp;&amp; !animationId) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>lastPhotonTime = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>animationId = requestAnimationFrame(animate);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('resetBtn').addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">重置实验</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>photons = [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>detector1Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>detector2Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>coincidenceCount = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateResults();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">如果是首次启动，开始动画</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!animationId) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>animationId = requestAnimationFrame(animate);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('singlePhotonBtn').addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (currentMode === 'entangledPhoton') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>emitEntangledPhotons();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>emitSinglePhoton();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">如果是首次启动，开始动画</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!animationId) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>animationId = requestAnimationFrame(animate);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">设置模式</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setMode(mode) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentMode = mode;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">更新模式按钮状态</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('singlePhotonMode').classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('coherentLightMode').classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('entangledPhotonMode').classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(`${mode}Mode`).classList.add('active');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">重置实验</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>photons = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>detector1Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>detector2Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>coincidenceCount = 0;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">根据模式调整参数</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (mode === 'coherentLight') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// <span class="s1">相干光模式下，反射率固定为</span>0.5</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reflectivity = 0.5;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('reflectivitySlider').value = 50;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('reflectivityValue').textContent = '0.50';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('reflectivitySlider').disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('reflectivitySlider').disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateResults();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">初始化应用</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function init() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">设置初始模式</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setMode('singlePhoton');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">初始化事件监听</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>initEventListeners();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">启动动画循环</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>animationId = requestAnimationFrame(animate);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">初始绘制</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>drawInterferometer();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateResults();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="s1">添加键盘快捷键</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.addEventListener('keydown', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (e.key === ' ') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// <span class="s1">空格键发射单光子</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>emitSinglePhoton();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else if (e.key === 'r' || e.key === 'R') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// R<span class="s1">键重置实验</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>photons = [];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>detector1Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>detector2Count = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>coincidenceCount = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>updateResults();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">页面加载完成后初始化</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('load', init);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
